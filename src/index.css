@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Sovereign Emerald Primary Ramp */
+  --color-primary-50: #F1F6F4;
+  --color-primary-100: #DEECE6;
+  --color-primary-200: #BFDBD0;
+  --color-primary-300: #96C2B2;
+  --color-primary-400: #599F89;
+  --color-primary-500: #2E7A64;
+  --color-primary-600: #1C4B3D;
+  --color-primary-700: #163E32;
+  --color-primary-800: #123228;
+  --color-primary-900: #0E251E;
+  --color-primary-950: #071510;
+
+  /* Harmonize indigo utility tokens to Sovereign Emerald */
+  --color-indigo-50: #F1F6F4;
+  --color-indigo-100: #DEECE6;
+  --color-indigo-200: #BFDBD0;
+  --color-indigo-300: #96C2B2;
+  --color-indigo-400: #599F89;
+  --color-indigo-500: #2E7A64;
+  --color-indigo-600: #1C4B3D;
+  --color-indigo-700: #163E32;
+  --color-indigo-800: #123228;
+  --color-indigo-900: #0E251E;
+  --color-indigo-950: #071510;
+
+  /* Sovereign Ochre / Saffron Accent */
+  --color-ochre-50: #FCF7F2;
+  --color-ochre-100: #F8ECE1;
+  --color-ochre-200: #F0D4BE;
+  --color-ochre-300: #E4B594;
+  --color-ochre-400: #D38E61;
+  --color-ochre-500: #B85D19;
+  --color-ochre-600: #A34E14;
+  --color-ochre-700: #843E11;
+
+  /* Archival Warm Paper & Inks */
+  --color-canvas-bg: #FAF8F5;
+  --color-canvas-card: #FFFFFF;
+  --color-canvas-subtle: #F4F1EA;
+  --color-canvas-muted: #EAE6DC;
+  
+  --color-border-subtle: #E8E3D7;
+  --color-border-card: #DFD9CC;
+  --color-border-strong: #C4BCAB;
+
+  --color-ink-950: #0E1614;
+  --color-ink-900: #151E1B;
+  --color-ink-800: #25332E;
+  --color-ink-700: #384A44;
+  --color-ink-600: #50615B;
+  --color-ink-500: #6D7F78;
+  --color-ink-400: #8E9F98;
+}
+
+@layer base {
+  *, ::before, ::after {
+    border-color: #E8E3D7;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #151E1B;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: rgba(28, 75, 61, 0.18);
+    color: #123228;
+  }
+
+  /* Custom refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FAF8F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #D8D2C4;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #BFB7A5;
+  }
+}
+
+@layer utilities {
+  .font-serif-headline {
+    font-family: var(--font-serif);
+    font-feature-settings: "kern", "liga", "clig";
+    letter-spacing: -0.025em;
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .card-ledger {
+    background-color: #FFFFFF;
+    border: 1px solid #E8E3D7;
+    box-shadow: 0 1px 3px rgba(18, 24, 22, 0.03), 0 6px 16px -4px rgba(18, 24, 22, 0.04);
+    transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-ledger:hover {
+    border-color: #BFDBD0;
+    box-shadow: 0 4px 12px rgba(18, 24, 22, 0.06), 0 16px 28px -6px rgba(18, 24, 22, 0.05);
+    transform: translateY(-1px);
+  }
+
+  .card-ledger-dark {
+    background-color: #111A16;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #FAF8F5;
+  }
+
+  .grid-pattern-subtle {
+    background-image: linear-gradient(to right, rgba(28, 75, 61, 0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(28, 75, 61, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .hairline-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #DFD9CC 20%, #DFD9CC 80%, transparent 100%);
+  }
+}
